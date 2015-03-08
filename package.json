@@ -1,0 +1,17 @@
+{
+  "name": "zeroQ",
+  "version": "0.0.1",
+  "description": "API/Web server for zeroQ",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "dependencies": {
+    "boom": "^2.6.1",
+    "good": "^5.1.2",
+    "good-console": "^4.1.0",
+    "hapi": "^8.2.0",
+    "joi": "^6.0.4",
+    "lout": "^6.2.1"
+  }
+}
