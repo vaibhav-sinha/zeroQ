@@ -1,6 +1,8 @@
 var Hapi = require('hapi');
 var Settings = require('./server/config/settings');
 var Plugins = require('./server/config/plugins');
+var Database = require('./server/config/database');
+var User = require('./server/user/controller');
 
 //Create new server
 var server = new Hapi.Server();
@@ -12,6 +14,12 @@ server.connection({host : Settings.host, port : Settings.port});
 server.register([
     {
         register : Plugins
+    },
+    {
+        register : Database
+    },
+    {
+        register : User
     }
 ], function(err) {
     if(err) {
@@ -31,8 +39,9 @@ server.route({
     config: {
         handler: function(req, res) {
             req.log();
-            res({name: 'Welcome'});
+            res(req.auth.credentials);
         },
+        auth: false,
         description: 'Welcome app',
         notes: 'Send a static welcome message to user',
         tags: ['api']
