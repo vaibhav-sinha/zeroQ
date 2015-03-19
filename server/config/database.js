@@ -10,6 +10,7 @@ exports.register = function (server, options, next) {
         server.app.db = db;
         server.app.mongoose = Mongoose;
     });
+    next();
 };
 
 exports.register.attributes = {

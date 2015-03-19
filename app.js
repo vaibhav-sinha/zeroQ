@@ -2,7 +2,7 @@ var Hapi = require('hapi');
 var Settings = require('./server/config/settings');
 var Plugins = require('./server/config/plugins');
 var Database = require('./server/config/database');
-var User = require('./server/user/controller');
+var Vendor = require('./server/vendor/controller');
 
 //Create new server
 var server = new Hapi.Server();
@@ -19,7 +19,7 @@ server.register([
         register : Database
     },
     {
-        register : User
+        register : Vendor
     }
 ], function(err) {
     if(err) {
@@ -39,11 +39,11 @@ server.route({
     config: {
         handler: function(req, res) {
             req.log();
-            res(req.auth.credentials);
+            res('Hello');
         },
         auth: false,
         description: 'Welcome app',
-        notes: 'Send a static welcome message to user',
+        notes: 'Send a static welcome message to vendor',
         tags: ['api']
     }
 });

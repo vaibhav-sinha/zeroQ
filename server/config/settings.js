@@ -8,5 +8,10 @@ module.exports = {
     database: {
         host: '127.0.0.1',
         db: 'test'
+    },
+    googleApiKey : {
+        clientId: '1079152163076-3f2agu06euicsf73ltpel8kmansfdom9.apps.googleusercontent.com',
+        clientSecret: 'PDxaxnWpSVgYx6VaSEMNENDQ',
+        redirect_uri: '/home'
     }
 };

@@ -68,7 +68,7 @@ exports.register = function(server, options, next) {
 
         server.auth.strategy('google', 'bell', bellOptions);
         server.auth.strategy('zeroq-cookie', 'cookie', authCookieOptions);
-        server.auth.default('zeroq-cookie');
+        //server.auth.default('zeroq-cookie');
 
     });
 
